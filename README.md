@@ -4,13 +4,22 @@
 
 Login as **fpp** User
 Run this to download setup file
-`wget -O setup.sh https://fpp-accordios.s3.us-east-1.amazonaws.com/setup.sh`
+
+```
+wget -O setup.sh https://fpp-accordios.s3.us-east-1.amazonaws.com/setup.sh
+```
 
 Then run this to make that file executable
-`chmod +x setup.sh`
+
+```
+chmod +x setup.sh
+```
 
 Then execute script
-`./setup.sh`
+
+```
+./setup.sh
+```
 
 It will update `apt-get`, download and install `awscli` and will ask for AWS access Key and Secret. It will also ask for default region [*example displays those values already provided*]:
 
