@@ -9,6 +9,15 @@ Run this to download setup file
 wget -O setup.sh https://fpp-accordios.s3.us-east-1.amazonaws.com/setup.sh
 ```
 
+> [!TIP]
+> If you get `permission denied` it most likely means you are using Dataplcitiy and are not in the right folder on the device.
+>
+> Switch to **fpp** home folder by:
+>
+> ```
+> cd /home/fpp
+> ```
+
 Then run this to make that file executable
 
 ```
