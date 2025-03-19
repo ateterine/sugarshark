@@ -27,22 +27,22 @@ echo "Using S3 bucket path: $S3_BUCKET"
 SCRIPT_FILE="s3_poll_sync.sh"
 
 # Write the script content
-cat <<'EOF' >"$SCRIPT_FILE"
+cat <<EOF >"$SCRIPT_FILE"
 #!/bin/bash
 
 # Define Variables
 S3_BUCKET="$S3_BUCKET"
 DEST_FOLDER="/home/fpp/media/videos/"
-LOG_FILE="$HOME/logs/s3_sync.log"
+LOG_FILE="\$HOME/logs/s3_sync.log"
 
 # Ensure the destination folder exists
-mkdir -p "$DEST_FOLDER"
+mkdir -p "\$DEST_FOLDER"
 
 # Function to sync files
 sync_s3() {
-    echo "$(date) - Checking for updates..." | tee -a "$LOG_FILE"
-    aws s3 sync "$S3_BUCKET" "$DEST_FOLDER"
-    echo "$(date) - Sync completed." | tee -a "$LOG_FILE"
+    echo "\$(date) - Checking for updates..." | tee -a "\$LOG_FILE"
+    aws s3 sync "\$S3_BUCKET" "\$DEST_FOLDER"
+    echo "\$(date) - Sync completed." | tee -a "\$LOG_FILE"
 }
 
 # Run the sync every 5 minutes (using cron)
